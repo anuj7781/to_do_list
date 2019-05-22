@@ -1,10 +1,59 @@
 <html>
-    <head>
-        <title>
-            <%= title %>
-        </title>
-    </head>
-    <body>
-        <h1>Welcome to your to do list</h1>
-    </body>    
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <h1>TODO APP</h1>
+    <form method="POST">
+        <div id="description" class="contain">
+            <label for="desc">DESCRIPTION</label>
+            <input class="form-control" type="text" id="desc" placeholder="what do you need to do?">
+        </div>
+        <div id="category-due">
+            <div id="category-container" class="contain">
+                <div id="category">
+                    <p id="category-heading">
+                        CATEGORY
+                    </p>
+                </div>
+                <div id="options">
+                    <select class="form-control">
+                        <option value="choose" disabled selected>Choose a category</option>
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="school">School</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div id="date-container" class="contain">
+                <div id="date">
+                    <p id="date-heading">
+                        DUE-DATE
+                </p>
+                </div>
+                <div id="select-date">
+                    <input class="form-control" id="date" type="date" placeholder="dd/mm/yy">
+                </div>
+            </div>
+        </div>
+        <div id="buttons">
+                <div id="but1">
+                    <button type="button" class="btn btn-secondary" formaction="/add_task">ADD TASK</button>
+                </div>
+                <div id="but2">
+                <button type="button" class="btn btn-danger" formaction="/delete_task">DELETE TASKS</button>
+                </div>
+        </div>
+    </form>
+</body>
+
 </html>
