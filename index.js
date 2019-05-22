@@ -43,6 +43,21 @@ app.post('/add-task/',function(req,res){
 
 });
 
+
+app.post('/delete-task/',function(req,res){
+    // //get the id from query in the  url
+    // let id = req.query.id
+
+    // //find the contact in the database using id and delete it
+    // Contact.findByIdAndDelete(id,function(err){
+    //     if(err){
+    //         console.log('Error in deleting an object from database');
+    //     }
+    //     return res.redirect('back');
+    // });
+    console.log(req.body);
+});
+
 app.listen(port,function(err){
     if(err){
         console.log(`Error in running the server : ${err}`);

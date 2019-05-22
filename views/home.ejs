@@ -12,10 +12,10 @@
 
 <body>
     <h1>TODO APP</h1>
-    <form method="POST">
+    <form method="POST" id="form1">
         <div id="description" class="contain">
             <label for="desc">DESCRIPTION</label>
-            <input name="task" class="form-control" type="text" id="desc" placeholder="what do you need to do?">
+            <input name="task" required class="form-control" type="text" id="desc" placeholder="what do you need to do?">
         </div>
         <div id="category-due">
             <div id="category-container" class="contain">
@@ -25,7 +25,7 @@
                     </p>
                 </div>
                 <div id="options">
-                    <select class="form-control" name="category">
+                    <select class="form-control" name="category" required>
                         <option value="choose" disabled selected>Choose a category</option>
                         <option value="personal">Personal</option>
                         <option value="work">Work</option>
@@ -42,28 +42,29 @@
                     </p>
                 </div>
                 <div id="select-date">
-                    <input name="date" class="form-control" id="date" type="date" placeholder="dd/mm/yy">
+                    <input name="date" required class="form-control" id="date" type="date" placeholder="dd/mm/yy">
                 </div>
             </div>
         </div>
         <div id="buttons">
             <div id="but1">
                 <i class="fas fa-plus"></i>
-                <button type="submit" class="btn btn-secondary" formaction="/add-task">ADD TASK</button>
+                <button type="submit" class="btn btn-secondary" form="form1" formaction="/add-task">ADD TASK</button>
             </div>
             <div id="but2">
                 <i class="far fa-trash-alt"></i>
-                <button type="submit" class="btn btn-danger" formaction="/delete-task">DELETE TASKS</button>
+                <button type="submit" class="btn btn-danger" form="form2" formaction="/delete-task">DELETE TASKS</button>
             </div>
         </div>
     </form>
 
+    <form id="form2">
     <%for(let i of task_list) {%>
     <div class="content border border-secondary">
         <div class="tasks">
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="">
+                    <input type="checkbox" class="form-check-input check" value="<%=id%>">
                 </label>
             </div>
             <div class="text">
@@ -103,6 +104,8 @@
         </div>
     </div>
     <% } %>
+    </form>
+    <script src="/assets/home.js"></script>
 </body>
 
 </html>
