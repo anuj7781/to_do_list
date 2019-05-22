@@ -4,6 +4,6 @@ const router = express.Router();
 
 
 router.get('/',homeController.home);
-
+router.use('/add-task',require('./add_task'));
 
 module.exports = router;

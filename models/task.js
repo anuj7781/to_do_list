@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 //define the schema
 //here you can put validations here
 const taskSchema = new mongoose.Schema({
-    desc:{
+    task:{
         type:String,
         required:true
     },
@@ -13,7 +13,7 @@ const taskSchema = new mongoose.Schema({
         required:true
     },
     date:{
-        type:Date,
+        type:String,
         required:true
     }
 });
