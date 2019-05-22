@@ -1,0 +1,14 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "\"this is a project to implement a basic to_do_list\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "to_do_list"
+  ],
+  "author": "Anuj",
+  "license": "ISC"
+}
